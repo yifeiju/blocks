@@ -3,6 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../app/firebase';
 import Login from '../screens/Login';
+import Principi from '../screens/Principi';
+import Main from './stacks/index'
+import Registro from '../screens/Registro';
+import Home from '../screens/Home';
+
 
 const MainNavigator = () => {
     const [isLogged, setIsLogged] = useState(false);
@@ -22,8 +27,8 @@ const MainNavigator = () => {
 
     return (<NavigationContainer>
         {isLogged ?
-            <Login/> :
-            <Login/>
+            <Main/> :
+            <Home/>
         }
     </NavigationContainer>)
 
