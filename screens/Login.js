@@ -38,7 +38,7 @@ const Login  = () => {
                     <TouchableOpacity onPress={() => signIn(email, password)}>
                         <View style={styles.btn}>
                             <Text style={styles.negrita}>
-                                Iniciar sessión
+                                Iniciar sesión
                             </Text>
                         </View>
                     </TouchableOpacity>
