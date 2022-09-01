@@ -9,10 +9,8 @@ import cadena88 from '../assets/cadena88.png';
 const Home=()=>{
     return(
 @ -7,4 +11,41 @@ const Home=()=>{
-        </View>
-    )
+           )
 }
-export default Home;
 export default Home;
 
 <View style={styles.container}>
@@ -32,8 +30,14 @@ const styles = StyleSheet.create({
  center: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 17,
+        marginTop: 16,
         marginBottom:0,
+ },
+ icons: {
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginTop: 16,
+        marginBottom: 16,
  },
  container: {
     width: '100%',
@@ -48,6 +52,19 @@ const styles = StyleSheet.create({
  },
  prompt: {
     alignItems: 'center',
-    margin
+    marginTop: 80,
+ },
+ input:{
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 12,
+    marginVertical: 12,
+    fontSize: 16,
+    color: '#333',
+    backgroundColor: '#eee',
+    width: '100%',
+    borderRadius:50,
+    marginTop:40,
  },
 })
