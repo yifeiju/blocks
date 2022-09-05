@@ -14,11 +14,13 @@ const Home=()=>{
     <View style={styles.container}>
         <View style={styles.center}>
         <Image source={monza} style={{width:325 , height:93}} resizeMode={'center'}/>
+        </View>
+    //<Textinput style={styles.input}
     </View>
-    <View style={styles.input}>
     <View style={styles.category}>
 
 </View>
+
 </keyboardAvoidingView>
 )
 }
