@@ -1,4 +1,3 @@
-@ -1,4 +1,8 @@
 import { StyleSheet, View, Text } from 'react-native';
 import React, { useState } from 'react'
 import { KeyboardAvoidingView, StyleSheet, TouchableOpacity, View, Text, TextInput, Image} from 'react-native';
@@ -8,18 +7,22 @@ import cadena88 from '../assets/cadena88.png';
 
 const Home=()=>{
     return(
-@ -7,4 +11,41 @@ const Home=()=>{
-           )
-}
-export default Home;
-
-<View style={styles.container}>
-    <View style={styles.center}>
-    <Image source={monza} style={{width:325 , height:93}} resizeMode={'center'}/>
+<keyboardAvoidingView 
+        behavior="height"
+        style={styles.screen}>
+           
+    <View style={styles.container}>
+        <View style={styles.center}>
+        <Image source={monza} style={{width:325 , height:93}} resizeMode={'center'}/>
     </View>
-    <View style={styles.}></>
+    <View style={styles.input}>
+    <View style={styles.category}>
 
 </View>
+</keyboardAvoidingView>
+)
+}
+export default Home;
 
 const styles = StyleSheet.create({
  screen: {
@@ -33,7 +36,7 @@ const styles = StyleSheet.create({
         marginTop: 16,
         marginBottom:0,
  },
- icons: {
+ category: {
         justifyContent: 'space-between',
         alignItems: 'center',
         marginTop: 16,
@@ -62,7 +65,7 @@ const styles = StyleSheet.create({
     marginVertical: 12,
     fontSize: 16,
     color: '#333',
-    backgroundColor: '#eee',
+    backgroundColor: '#1A1A1A',
     width: '100%',
     borderRadius:50,
     marginTop:40,
