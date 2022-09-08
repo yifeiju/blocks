@@ -1,75 +1,85 @@
-import { StyleSheet, View, Text } from 'react-native';
 import React, { useState } from 'react'
-import { KeyboardAvoidingView, StyleSheet, TouchableOpacity, View, Text, TextInput, Image} from 'react-native';
-import monza from '../assets/monza.png';
-import cofac from '../assets/cofac.png';
-import cadena88 from '../assets/cadena88.png';
+import { KeyboardAvoidingView, StyleSheet, TouchableOpacity, View, Text, TextInput, Image ,TouchableHighlight} from 'react-native';
+import { logout } from '../app/api';
+import globalStyles from '../app/globalStyles';
+import logo from '../assets/logo.png'
+import busca from '../assets/busca.png'
 
 const Home=()=>{
     return(
-<keyboardAvoidingView 
-        behavior="height"
-        style={styles.screen}>
-           
-    <View style={styles.container}>
-        <View style={styles.center}>
-        <Image source={monza} style={{width:325 , height:93}} resizeMode={'center'}/>
+        <KeyboardAvoidingView
+            behavior="height"
+            style={globalStyles.screen}
+        >
+        <View style={globalStyles.container}>
+            <View style={styles.center}>
+            <Image source={logo} style={{ width:266 , height: 74 }} resizeMode={'center'} />
+            </View>
+            
+                <View style={styles.searchContainer}>
+                    <Image source={busca} style={{width:32, height:32}}></Image>
+                        <TextInput underlineColorAndroid="transparent" style={{marginLeft:10, width:'85%',height:'80%'}}></TextInput>
+                        
+                </View>
+            
+            <TouchableOpacity onPress={()=>logout()}>
+                <Text>out</Text>
+            </TouchableOpacity>
         </View>
-    //<Textinput style={styles.input}
-    </View>
-    <View style={styles.category}>
-
-</View>
-
-</keyboardAvoidingView>
-)
+        </KeyboardAvoidingView>
+    )
 }
 export default Home;
 
 const styles = StyleSheet.create({
- screen: {
-        flex: 1,
+
+ 
+    center:{
         justifyContet: 'center',
         alignItems: 'center',
- },
- center: {
-        justifyContent: 'center',
+        marginTop:55,
+    },
+
+    
+    prompt: {
         alignItems: 'center',
-        marginTop: 16,
-        marginBottom:0,
- },
- category: {
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginTop: 16,
-        marginBottom: 16,
- },
- container: {
-    width: '100%',
-    maxWidth: 400,
-    padding: 50,
-    margin: 12,
-    borderColor: '#ccc',
-    borderwith: 1,
-    position: 'relative',
-    backgroundColor: '#1A1A1A',
-    height:800,
- },
- prompt: {
-    alignItems: 'center',
-    marginTop: 80,
- },
- input:{
-    borderColor: '#FFFFFF',
-    borderWidth: 1,
-    borderRadius: 10,
-    padding: 12,
-    marginVertical: 12,
-    fontSize: 16,
-    color: '#333',
-    backgroundColor: '#1A1A1A',
-    width: '100%',
-    borderRadius:50,
-    marginTop:40,
- },
+        marginTop:80,
+    },
+
+    txtcenter:{
+        textAlign:'center',
+        color:'white',
+    },
+    
+    input: {
+        borderColor: '#ccc',
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 12,
+        marginVertical: 12,
+        fontSize: 16,
+        color: '#333',
+        backgroundColor: '#eee',
+        width: '100%',
+        borderRadius:50,
+        marginTop:40,
+    },
+    white:{
+        color:'white',
+        marginBottom:20,
+    },
+    
+    negrita:{
+        fontWeight:'bold'
+    },
+    searchContainer :{
+        height:48,
+        borderRadius:6,
+        flexDirection:'row',
+        alignItems:'center',
+        paddingLeft:10,
+        backgroundColor:'#D9D9D9',
+        
+    },
+   
 })

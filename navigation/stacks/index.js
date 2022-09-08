@@ -7,7 +7,7 @@ import Registro from "../../screens/Registro";
 const Stack = createStackNavigator();
 
 export default () => (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown:false}}>
         <Stack.Screen name="Principi" component={Principi} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Registro" component={Registro} />

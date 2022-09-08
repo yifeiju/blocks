@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { KeyboardAvoidingView, StyleSheet, TouchableOpacity, View, Text, TextInput, Image } from 'react-native';
 import { signUp } from '../app/api';
 import logo from '../assets/logo.png';
+import globalStyles from '../app/globalStyles';
 
 const Registro  = () => {
     const [isSignUp, setIsSignUp] = useState(false);
@@ -13,15 +14,16 @@ const Registro  = () => {
     return (
         <KeyboardAvoidingView
             behavior="height"
-            style={styles.screen}
+            style={globalStyles.screen}
         >
-            <View style={styles.container}>
+            <View style={globalStyles.container}>
                 <View style={styles.center}>
-                <Image source={logo} style={{ width:200 , height: 100 }} resizeMode={'center'} />
+                <Image source={logo} style={{ width:266 , height: 74 }} resizeMode={'center'} />
                 </View>
                 <Text style={styles.siempre}>Siempre cerca de ti.</Text>
                 
-                
+                <TextInput style={styles.input} placeholder='Usuario/Profesional' autoCapitalize="none"  />
+
                 <TextInput style={styles.input} placeholder='Nombre' autoCapitalize="none" onChangeText={text => setName(text)} />
 
                 <TextInput style={styles.input} keyboardType="email-address" placeholder='E-mail' autoCapitalize="none" onChangeText={text => setEmail(text)} />
@@ -35,7 +37,7 @@ const Registro  = () => {
             
                 <View style={styles.prompt}>
                     <TouchableOpacity onPress={() => signUp(email, password)}>
-                        <View style={styles.btn}>
+                        <View style={globalStyles.btnyellow}>
                             <Text style={styles.negrita}>
                                 Completar registro
                             </Text>
@@ -52,87 +54,51 @@ const Registro  = () => {
 export default Registro; 
 
 const styles = StyleSheet.create({
-    screen: {
-        flex: 1,
-        justifyContet: 'center',
-        alignItems: 'center',
-        
-    },
-    icons:{
-        height:80,
-        
-        display:'flex',
-        justifyContent:'space-between',
-        flexDirection:'row',
-    },
+
     center:{
         justifyContet: 'center',
         alignItems: 'center',
-        marginTop:50,
-        marginBottom:0,
+        marginTop:55,
     },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 18,
-        textAlign: 'center'
-    },
-    container: {
-        width: '100%',
-        maxWidth: 400,
-        padding: 50,
-        margin: 12,
-        borderColor: '#ccc',
-        borderWidth: 1,
-        
-        backgroundColor: '#1a1a1a',
-        height:800,
-    },
+
     prompt: {
         alignItems: 'center',
-        marginTop:20,
+        textAlign:'center',
+        position:'absolute',
+        width: '100%',
+        height:154,
+        bottom:0,
+        left:0,
     },
-    promptMessage: {
-        fontSize: 16,
-        color: '#333'
-    },
+
     txtcenter:{
         textAlign:'center',
         color:'white',
     },
     
     input: {
-        borderColor: '#ccc',
-        borderWidth: 1,
-        borderRadius: 10,
         padding: 12,
-        marginVertical: 12,
         fontSize: 16,
-        color: '#333',
-        backgroundColor: '#eee',
-        width: '100%',
-        borderRadius:50,
-        marginBottom:40,
+        color: '#626262',
+        backgroundColor: '#D9D9D9',
+        borderRadius:8,
+        marginTop:40,
+        height:40,
+        width:360,
     },
     white:{
         color:'white',
         marginBottom:20,
     },
-    btn:{
-        width:300,
-        height:50,
-        backgroundColor:'#F9BF1C',
-        textAlign:'center',
-        justifyContent: 'center', 
-        borderRadius:100,
-    },
+
     negrita:{
         fontWeight:'bold'
     },
     siempre:{
-        color:'white',
+        color:'#041E42',
         textAlign:'center',
-        fontSize:15,
-        marginBottom:50,
-    }
+        fontSize:23,
+        marginTop:48,
+        marginBottom:30,
+    },
 })

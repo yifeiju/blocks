@@ -27,8 +27,8 @@ const MainNavigator = () => {
 
     return (<NavigationContainer>
         {isLogged ?
-            <Main/> :
-            <Home/>
+            <Home/> :
+            <Main/>
         }
     </NavigationContainer>)
 
